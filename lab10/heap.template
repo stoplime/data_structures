@@ -1,0 +1,119 @@
+
+// precondition: element at index has children
+// postcondition: index of the larger child has been returned
+//                if there is only 1 child - index of that child has been returned
+unsigned int max_child (unsigned int index) const
+{
+	unsigned int left_child = index*2+1;
+	unsigned int right_child = index*2+2;
+	assert(size() > left_child);
+	if (size() > right_child)
+	{
+		//has two children
+		if (v[left_child] > v[right_child])
+		{
+			return left_child;
+		}
+		else
+		{
+			return right_child;
+		}
+	}
+	else
+	{
+		//has only left child
+		return left_child;
+	}
+}
+
+// postcondition: empty heap has been created
+template <typename T>
+heap()
+: v()
+{
+	
+}
+
+
+// postcondition: number of elements in a heap has been returned
+template <typename T>
+unsigned int size() const
+{
+	return v.size();
+}
+
+
+// postcondtion: returned whether the heap is empty
+template <typename T>
+bool is_empty() const
+{
+	if (size() == 0)
+	{
+		return true;
+	}
+	return false;
+}
+
+
+// postcondition: item has been added
+template <typename T>
+void insert (const T& item)
+{
+	v.push_back(item);
+	//the class invariance
+	unsigned int child_index = size()-1;
+	unsigned int parent_index = (child_index-1)/2;
+	if (parent_index < 0)
+	{
+		return;
+	}
+	while (child_index > 0 || v[parent_index] < v[child_index])
+	{
+		T* tmp = v[parent_index];
+		v[parent_index] = v[child_index];
+		v[child_index] = tmp;
+		child_index = parent_index;
+		parent_index = (child_index-1)/2;
+	}
+	
+}
+
+
+// precondition: heap is not empty
+// postcondition: largest item has been removed from the heap
+template <typename T>
+void remove()
+{
+	assert(!is_empty());
+	unsigned int parent_index = 0
+	if (size() == 1)
+	{
+		v.erase(v.begin);
+	}
+	unsigned int child_index = max_child(parent_index);
+	while ()
+	{
+		
+	}
+	
+}
+
+
+// precondition: heap is not empty
+// postcondition: copy of largest element in the heap has been returned
+template <typename T>
+T max() const
+{
+	
+}
+
+
+// precondition: heap is not empty
+// postcondition: access to largest element in the heap has been returned
+template <typename T>
+T& max()
+{
+	
+}
+
+

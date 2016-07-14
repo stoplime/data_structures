@@ -1,0 +1,50 @@
+
+// postcondition: empty priority_queue has been created
+template <typename T>
+priority_queue()
+{
+	
+}
+
+
+// precondition: priority_queue is not emtpy
+// postcondition: highest priority item has been removed
+template <typename T>
+void pop()
+{
+	
+}
+
+
+// postcondition: item has been inserted
+template <typename T>
+void push (const T& item)
+{
+	
+}
+
+
+// postcondition: returned whether priority queue is empty
+template <typename T>
+bool empty () const
+{
+	
+}
+
+
+// postcondition: returned number of items in the priority queue
+template <typename T>
+unsigned int size() const
+{
+	
+}
+
+
+// precondition: priority queue is not empty
+// postcondition: copy of highest priority item has been returned
+template <typename T>
+T top() const
+{
+	
+}
+
