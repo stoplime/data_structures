@@ -1,0 +1,39 @@
+
+
+/// Post: creates an empty set of data to sort
+template <class T>
+shell_sort<T>::shell_sort()
+: data()
+{
+}
+template <class T>
+shell_sort<T>::shell_sort(const shell_sort& src)
+{
+	copy(src.data, src.data+src.data.size(), data);
+}
+template <class T>
+shell_sort<T>::~shell_sort();
+
+/// Post: rearrage the data to be sorted;
+template <class T>
+void shell_sort<T>::sort();
+
+/// ****** mainly for interacting with data values ****** 
+/// Post: adds item to the end of the vector
+template <class T>
+void shell_sort<T>::push_back(const T& item);
+/// Pre: int i must be a valid index
+/// Post: insert item at index i, shift all values after it by one
+template <class T>
+void shell_sort<T>::insert(const T& item, int i);
+/// Pre: data must have atleast one entry
+/// Post: remove the last entry of the data
+template <class T>
+void shell_sort<T>::pop_back();
+/// Pre: index i must exist
+/// Post: removes the item at index i, shifts all values after it by negative one
+template <class T>
+void shell_sort<T>::remove(int i);
+
+/// Post: swaps indexes
+void swap(int index1, int index2);
